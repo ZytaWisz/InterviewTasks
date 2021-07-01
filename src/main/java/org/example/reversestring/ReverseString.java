@@ -1,6 +1,12 @@
-package org.example;
+package org.example.reversestring;
 
 public class ReverseString {
+
+
+    public static void main(String[] args) {
+
+        System.out.println(new ReverseString().reverseTheString("Ala ma kota"));
+    }
 
     public String reverseTheString(String textToReverse) {
 

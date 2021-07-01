@@ -1,10 +1,20 @@
-package org.example;
+package org.example.primenumber;
 
 import java.util.Scanner;
 
 public class PrimeNumber {
 
     private int number;
+
+    public static void main(String[] args) {
+
+        PrimeNumber primeNumber = new PrimeNumber();
+        if (primeNumber.isPrime()) {
+            System.out.println("Podana liczba jest liczbą pierwszą");
+        } else {
+            System.out.println("Podana liczba nie jest liczbą pierwszą");
+        }
+    }
 
     public boolean isPrime() {
          number = getNumberFromUser();
