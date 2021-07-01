@@ -6,7 +6,7 @@ import java.util.List;
 public class OddNumbersList {
 
     public static void main(String[] args) {
-        List<Integer> integers = new ArrayList<Integer>(List.of(9, 3, 1, 7, 11));
+        List<Integer> integers = List.of(1,3,15,19);
 
         OddNumbersList oddNumbersList = new OddNumbersList();
         if (oddNumbersList.checkIfListHasOnlyOddNumbers(integers)) {
@@ -17,13 +17,13 @@ public class OddNumbersList {
     }
 
     public boolean checkIfListHasOnlyOddNumbers(List<Integer> numberList) {
-        boolean itIsOddNumbers = false;
+        boolean itIsOddNumbers = true;
         for (int i = 0; i < numberList.size(); i++) {
             if (numberList.get(i) % 2 == 0) {
                  itIsOddNumbers = false;
 
             }
         }
-        return true;
+        return itIsOddNumbers;
     }
 }
