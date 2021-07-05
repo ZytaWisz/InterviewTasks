@@ -20,17 +20,12 @@ public class PalindromeExample {
     public boolean checkIfItPalindrome() {
 
         StringBuilder stringBuilder = new StringBuilder();
-        boolean itIsPalindrome = false;
         String textOriginal = getTextFromUser();
-
         int length = textOriginal.length();
         for (int i = length - 1; i >= 0; i--) {
             stringBuilder.append(textOriginal.charAt(i));
-            if (textOriginal.equals(stringBuilder.toString())) {
-                itIsPalindrome = true;
-            }
         }
-        return itIsPalindrome;
+        return textOriginal.equals(stringBuilder.toString());
     }
 
     public String getTextFromUser() {
