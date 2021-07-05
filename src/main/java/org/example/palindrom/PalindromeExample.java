@@ -7,24 +7,26 @@ public class PalindromeExample {
 
     public static void main(String[] args) {
 
-    PalindromeExample palindromeExample=new PalindromeExample();
+        PalindromeExample palindromeExample = new PalindromeExample();
 
-        if ( palindromeExample.checkIfItPalindrome()){
+        if (palindromeExample.checkIfItPalindrome()) {
             System.out.println("The given text it is a palindrome");
-        }else {
+        } else {
             System.out.println("The given text is not a palindrome");
         }
 
     }
+
     public boolean checkIfItPalindrome() {
-        String reverse = "";
-         boolean itIsPalindrome = false;
+
+        StringBuilder stringBuilder = new StringBuilder();
+        boolean itIsPalindrome = false;
         String textOriginal = getTextFromUser();
 
         int length = textOriginal.length();
         for (int i = length - 1; i >= 0; i--) {
-            reverse = reverse+textOriginal.charAt(i);
-            if (textOriginal.equals(reverse)) {
+            stringBuilder.append(textOriginal.charAt(i));
+            if (textOriginal.equals(stringBuilder.toString())) {
                 itIsPalindrome = true;
             }
         }
