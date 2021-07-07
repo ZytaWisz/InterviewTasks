@@ -73,6 +73,10 @@ public class ArrayComparing {
         Collections.addAll(targetSet1, array1);
         Set<Object> targetSet2 = new HashSet<Object>();
         Collections.addAll(targetSet2, array2);
+        if (array1==null || array2==null){
+            System.out.println("Arrays can't be null");
+            return false;
+        }
 
         return targetSet1.equals(targetSet2);
     }
