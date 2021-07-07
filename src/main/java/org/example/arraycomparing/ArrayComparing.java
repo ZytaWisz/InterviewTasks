@@ -1,9 +1,13 @@
 package org.example.arraycomparing;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The type Array comparing.
+ *
  * @author Zyta Wiszniewska
  */
 public class ArrayComparing {
@@ -12,11 +16,11 @@ public class ArrayComparing {
 
         Object[] array1 = new Object[]{1, 2, 3, 4};
         Object[] array2 = new Object[]{1, 2, 3, 4};
-        Object[] arrayString1=new Object[]{"ala", "kasia","Monika"};
-        Object[] arrayString2=new Object[]{"kasia", "ala","Monika"};
+        Object[] arrayString1 = new Object[]{"ala", "kasia", "Monika"};
+        Object[] arrayString2 = new Object[]{"kasia", "ala", "Monika"};
 
         boolean isEquals = new ArrayComparing().isArraysEqual(array1, array2);
-        boolean isEqualsStringArrays=new ArrayComparing().compareArraysWithDifferentOrder(arrayString1, arrayString2);
+        boolean isEqualsStringArrays = new ArrayComparing().compareArraysWithDifferentOrder(arrayString1, arrayString2);
 
         getResultComparingArrays(isEquals);
         getResultComparingArrays(isEqualsStringArrays);
@@ -64,4 +68,12 @@ public class ArrayComparing {
         return Arrays.equals(array1, array2);
     }
 
+    public boolean compareArrayWithHasSameElements(Object[] array1, Object[] array2) {
+        Set<Object> targetSet1 = new HashSet<Object>();
+        Collections.addAll(targetSet1, array1);
+        Set<Object> targetSet2 = new HashSet<Object>();
+        Collections.addAll(targetSet2, array2);
+
+        return targetSet1.equals(targetSet2);
+    }
 }
