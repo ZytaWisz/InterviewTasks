@@ -1,14 +1,13 @@
 package org.example.distinctcharacters;
 
-import org.assertj.core.api.MapAssert;
-import org.junit.Assert;
-import org.junit.Test;
 
-import java.util.HashMap;
+import org.assertj.core.api.Assert;
+import org.junit.jupiter.api.Test;
+
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DistinctCharactersInStringTest {
     DistinctCharactersInString distinctCharactersInString = new DistinctCharactersInString();
@@ -18,7 +17,7 @@ public class DistinctCharactersInStringTest {
         String testString = "ala";
         Map<Character, Integer> result = Map.of('a', 2, 'l', 1);
 
-        Assert.assertEquals(result, distinctCharactersInString.getDistinctOfCharacters(testString));
+        assertEquals(result, distinctCharactersInString.getDistinctOfCharacters(testString));
     }
 
     @Test
