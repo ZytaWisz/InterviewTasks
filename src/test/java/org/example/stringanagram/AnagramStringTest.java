@@ -8,8 +8,8 @@ public class AnagramStringTest {
     AnagramString anagramString = new AnagramString();
 @Test
     public void shouldReturnTrueIfIsAnagramString() {
-        String normal = "keep";
-        String anagram = "peek";
+        String normal = "keep me awake%";
+        String anagram = "%peek kawe mea";
 
         Boolean actual = anagramString.checkItIsAnagram(normal, anagram);
 
