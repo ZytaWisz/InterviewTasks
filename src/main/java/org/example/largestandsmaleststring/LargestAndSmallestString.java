@@ -1,4 +1,4 @@
-package org.example.largestandsmoleststring;
+package org.example.largestandsmaleststring;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,8 +46,6 @@ public class LargestAndSmallestString {
 
     public Map<String, String> findSmallestAndLargestStringNextExample(String text) {
         String s = "";
-        String small = "";
-        String largest = "";
         String smallestWord = "smallestWord";
         String largestWord = "largestWord";
         Map<String, String> stringMap = new HashMap<>();
@@ -55,22 +53,19 @@ public class LargestAndSmallestString {
         StringTokenizer stringTokenizer = new StringTokenizer(text, " ");
         while (stringTokenizer.hasMoreTokens()) {
             s = (stringTokenizer.nextToken());
-            if (small.length()==0 ||small.length() >s.length()) {
-                small = s;
-                stringMap.put(smallestWord, small);
+            if (stringMap.get(smallestWord) == null || stringMap.get(smallestWord).length() > s.length()) {
+                stringMap.put(smallestWord, s);
             }
-            if (largest.length() < s.length()) {
-                largest = s;
-                stringMap.put(largestWord, largest);
+            if (stringMap.get(largestWord) == null || stringMap.get(largestWord).length() < s.length()) {
+                stringMap.put(largestWord, s);
             }
         }
-
         return stringMap;
     }
 
     public void printMapResult(Map<String, String> stringMap) {
         for (Map.Entry entry : stringMap.entrySet()) {
-            System.out.println( entry.getKey() + " is: " + entry.getValue());
+            System.out.println(entry.getKey() + " is: " + entry.getValue());
         }
     }
 }
